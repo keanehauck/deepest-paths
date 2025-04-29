@@ -1,6 +1,6 @@
 // Firebase initialization
 const firebaseConfig = {
-  apiKey: "AIzaSyDIcSlBjSKVY-SJmDh_RtRXuuB29LdpRyQ",
+  apiKey: "PLACEHOLDER",
   authDomain: "deeper-paths.firebaseapp.com",
   databaseURL: "https://deeper-paths-default-rtdb.firebaseio.com",
   projectId: "deeper-paths",
