@@ -1,0 +1,11 @@
+TODO:
+X Add points to move data
+X Add mute button
+X Add rule change feature
+X Add rule bar
+X Fix weird click in middle bug (Caused by error bar)
+X Add new styles to end of round messages
+
+OPTIONAL:
+Add bar showing how close the user is to "passing"
+Add funcationality to import rulesets

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Deeper Paths</title>
+	<link rel="stylesheet" href="app.css">
+	</head>
+	<body>
+    <header>
+		<h1>Deeper Paths</h1>
+    </header>
+	<main>
+
+		        <!-- Settings Screen, added by Keane -->
+				
+		
+		
+
+
+		<div id="overlay">
+
+
+			<div id="settings-screen">
+				<h2>Game Settings</h2>
+				<form id="settings-form">
+
+					<label for="participant-id">Participant ID (if blank, results will not be saved):</label>
+					<input type="text" id="participant-id" name="participant-id"><br><br>
+					
+					<label for="protocol-select">Select Protocol:</label>
+					<select id="protocol-select" name="protocol-select" onchange="">
+						<!-- Options will be populated dynamically -->
+					</select>
+					<br><br>
+
+					<!-- Protocol name text box -->
+					<label for="protocol-name">Protocol Name:</label>
+					<input type="text" id="protocol-name" name="protocol-name" placeholder="Enter protocol name"><br><br>
+			
+					
+					
+					<label for="num-games">Number of Games:</label>
+					<input type="number" id="num-games" name="num-games" min="1" value="1"><br>
+					
+					<label for="change-scoring-game">Game after which a score change will occur (For no scoring change, set equal to the # of games):</label>
+					<input type="number" id="change-scoring-game" name="change-scoring-game" min="0" value="0"><br>
+
+					<label for="change-game">Round after which a score change will occur (For no scoring change, set equal to the # of rounds):</label>
+					<input type="number" id="change-game" name="change-game" min="1" value="5"><br>
+
+					<label for="suit-selection">Preferred Suit of Change:</label>
+						<select id="suit-selection" name="suit-selection">
+						<option value="Random">Random each game</option>
+						<option value="Spades">Spades</option>
+						<option value="Hearts">Hearts</option>
+						<option value="Diamonds">Diamonds</option>
+						<option value="Clubs">Clubs</option>
+						</select><br>
+						
+					<label for="include-timer">Include Timer:</label>
+					<input type="checkbox" id="include-timer" name="include-timer"><br>
+
+					<label for="round-time">Set round time (seconds): </label>
+					<input type="number" id="round-time" min="1" value="60">
+						
+					<br>
+					<br>
+					<!-- Buttons for Saving and Deleting Protocols -->
+					<button type="button" id="save-protocol-button">Save Protocol</button>
+					<button type="button" id="delete-protocol-button">Delete Protocol</button>
+
+					<br><br>
+					<button type="button" id="save-settings-button">Continue with current settings</button>
+				</form>
+			</div>
+
+
+
+			<div id="welcome-screen">
+				<h2><span style="color: rgb(255, 255, 255); font-weight: bold;">Welcome, daring explorer!</span> </h2>
+				<p>
+					You have been hired by the renowned treasure-hunting company, <span style="color: rgb(34, 172, 214); font-weight: bold;">GemSeekers Inc.</span>, to embark on an exhilarating adventure through a recently discovered cave complex in search of treasure!	Each time you enter the cave, you will be responsible for choosing the path you take, revealing cards along the way which accumulate points and unlock the path forward.
+				</p>
+				<p>
+					What you are looking for in the cave are special cards that hold rare <span style="color: rgb(34, 172, 214); font-weight: bold;">gems</span> 💎:
+				</p>
+				<ul>
+					<li><span style="color: rgb(156, 102, 241); font-weight: bold;">Aces (A)</span> are the rarest <span style="color: rgb(34, 172, 214); font-weight: bold;">gems</span> 💎 and most valuable, worth <span style="color: rgb(156, 102, 241); font-weight: bold;">2 points</span>.</li>
+					<li><span style="color: rgb(66, 190, 41); font-weight: bold;">Kings (K), Queens (Q), Jacks (J), and 10s</span> are more common <span style="color: rgb(34, 172, 214); font-weight: bold;">gems</span> 💎 worth <span style="color: rgb(66, 190, 41); font-weight: bold;">1 point</span>.</li>
+					<li><span style="color: rgb(228, 51, 51); font-weight: bold;">All other cards</span> do not contain <span style="color: rgb(34, 172, 214); font-weight: bold;">gems</span> and are worth <span style="color: rgb(228, 51, 51); font-weight: bold;">0 points</span>.</li>
+				  </ul>
+				<p>Here's how each trip into the cave will unfold:</p>
+				<ol>
+				  <li>Each time you enter the cave, the first row of cards on the left is unlocked for exploration, as indicated by a golden key 🔑 on the back of the card.</li>
+				  <li>After flipping a card, the remaining cards in the same row become locked 🔒, while the cave's magic will unlock 🔓 the next row of cards based on your current position.</li>
+				  <li>If you find a <span style="color: rgb(34, 172, 214); font-weight: bold;">gem</span>, its point value will be added to your total score.</li>
+				  <li>The deeper you venture into the cave, the more <span style="color: rgb(34, 172, 214); font-weight: bold;">gems</span> you will accumulate. Keep an eye on your total score as you progress to determine how well your adventure is going.</li>
+				  <li>When you reach the end of the cave, you will ship your treasure off to <span style="color: rgb(34, 172, 214); font-weight: bold;">GemSeekers Inc.</span>, and the scoreboards will be updated showing your accomplishments to date.</li>
+				</ol>
+				<p>
+				  You will be given 10 chances to explore the cave. Your goal is to send home as many total <span style="color: rgb(34, 172, 214); font-weight: bold;">gems</span> as you can.
+				</p>
+				<button id="continue-button">Continue</button>
+			</div>
+			<div id="contest-screen">
+				<p>Welcome, brave explorer!</p>
+				
+				<p>Are you ready to put your treasure-hunting skills to the test and uncover the hidden gems within the cave? Strap on your gear, grab your trusty flashlight, and prepare for the adventure of a lifetime!</p>
+				<p>🏆🌟Good luck! The fortune and glory of Deeper Paths await! 🌟🏆</p>
+				<!--PLACEHOLDER-->
+				
+
+				<button id="start-button">Start Game</button>
+				
+			</div>			  
+		</div>
+		<div id="error-box" class="error-box"></div>
+		<div id="message-box"></div>
+		
+		<div class="content-container">
+			<div class="scoreboard-container">
+				<div class="scoreboard">
+					<div id="score-box"><span class="total-score">Total score:</span> 0</div>
+					<div id="♥-score" class="heart">Hearts ♥: 0</div>
+					<div id="♦-score" class="diamond">Diamonds ♦: 0</div>
+					<div id="♠-score" class="spade">Spades ♠: 0</div>
+					<div id="♣-score" class="club">Clubs ♣: 0</div>
+				</div>
+				<div class="scoretracker-container">
+				<div class="scoretracker">
+					<div id="gamescore-1">Round 1:</div>
+					<div id="gamescore-2">Round 2:</div>
+					<div id="gamescore-3">Round 3:</div>
+					<div id="gamescore-4">Round 4:</div>
+					<div id="gamescore-5"> Round 5:</div>
+					<div id="gamescore-6">Round 6:</div>
+					<div id="gamescore-7">Round 7:</div>
+					<div id="gamescore-8">Round 8:</div>
+					<div id="gamescore-9"> Round 9:</div>
+					<div id="gamescore-10">Round 10:</div>
+				</div>
+				</div>
+				<div class="suittracker-container">
+					<div class="suittracker">
+					<div id="suitscore-1">Suits Round 1</div>
+					<div id="suitscore-2">Suits Round 2</div>
+					<div id="suitscore-3">Suits Round 3</div>
+					<div id="suitscore-4">Suits Round 4</div>
+					<div id="suitscore-5">Suits Round 5</div>
+					<div id="suitscore-6">Suits Round 6</div>
+					<div id="suitscore-7">Suits Round 7</div>
+					<div id="suitscore-8">Suits Round 8</div>
+					<div id="suitscore-9">Suits Round 9</div>
+					<div id="suitscore-10">Suits Round 10</div>
+					</div>
+				</div>
+			</div>	  
+			<div class="game-board">
+				<div class="row" data-row="1">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+				</div>
+				<div class="row" data-row="2">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+				</div>		  
+				<div class="row" data-row="3">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>		
+				</div>
+				<div class="row" data-row="4">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+				</div>
+				<div class="row" data-row="5">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+				</div>
+				<div class="row" data-row="6">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+				</div>
+				<div class="row" data-row="7">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+				</div>
+				<div class="row" data-row="8">
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+					<div class="card"></div>
+				</div>
+			</div>
+			<div class="sound-toggle-container">
+				<button class="sound-toggle" aria-label="Toggle Sound">Sound on 🔊</button>
+			</div>
+			<div class="rule-container">
+			</div>
+			
+		</div>
+		<div id="timer">Time left: <span id="time-left">N/A</span> seconds</div>
+	</main>
+	<footer>
+		<p>&copy; 2023 Jay Hardy</p>
+	</footer>
+
+	<!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+
+	<!-- App Script -->
+
+
+	<!-- Import protocol function for settings -->
+	<script type="module">
+		import { applyProtocol } from './app.js';
+		document.getElementById("protocol-select").addEventListener("change", applyProtocol);
+	</script>
+
+	<script type="module">
+		import { saveProtocol } from './app.js';
+		document.getElementById("save-protocol-button").addEventListener("click", saveProtocol);
+	</script>
+
+	<script type="module">
+		import { loadProtocols } from './app.js';
+		document.getElementById("protocol-select").addEventListener("change", loadProtocols);
+	</script>
+
+	<script type="module">
+		import { deleteProtocol } from './app.js';
+		document.getElementById("delete-protocol-button").addEventListener("click", deleteProtocol);
+	</script>
+
+	
+	<script type="module" src="app.js"></script>
+	
+	</body>
+</html>
