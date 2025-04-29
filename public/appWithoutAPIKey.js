@@ -1,10 +1,14 @@
-
 //TODO: fix some of the notation when referring to change game and change round in the html.
+//      change how the zoom functions when accessing the game on different browsers
+//      update how suit is output for easier readability when analyzing data
+
+
 //Known issues: for some reason, when I inherited this code, the term 'row' is used in place of 'column', and vice versa.
 //I just rolled with it, so these two terms consistently have the wrong meanings.
 //Darn ChatGPT...
 
 //Apologies to anyone reading this code (Including future versions of Keane Hauck). The current notation is CONFUSING.
+
 
 //legitimate firebase stuff
 
